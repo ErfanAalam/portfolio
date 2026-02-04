@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
+/* Tailwind v4 dark mode configuration - enables dark mode with .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  /* Background Colors */
   --background: #ffffff;
   --foreground: #171717;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #ffffff;
+  
+  /* Primary Colors - Grey Theme */
+  --color-primary: #374151; /* gray-700 */
+  --color-primary-light: #4b5563; /* gray-600 */
+  --color-primary-lighter: #6b7280; /* gray-500 */
+  --color-primary-dark: #1f2937; /* gray-800 */
+  
+  /* Secondary Colors - Grey Theme */
+  --color-secondary: #6b7280; /* gray-500 */
+  --color-secondary-light: #9ca3af; /* gray-400 */
+  --color-secondary-lighter: #d1d5db; /* gray-300 */
+  
+  /* Accent Colors - Subtle Grey */
+  --color-accent: #9ca3af; /* gray-400 */
+  
+  /* Gray Scale */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Text Colors */
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --text-light: #9ca3af;
+  
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-dark: #9ca3af;
+  
+  /* Gradient Colors - Grey Theme */
+  --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  --gradient-hero: linear-gradient(to right, var(--gray-600), var(--gray-500), var(--gray-400));
+  --gradient-text: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+.dark {
+  /* Background Colors - Dark Mode */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #010101;
+  
+  /* Primary Colors - Dark Mode (Lighter greys for contrast) */
+  --color-primary: #d1d5db; /* gray-300 */
+  --color-primary-light: #e5e7eb; /* gray-200 */
+  --color-primary-lighter: #f3f4f6; /* gray-100 */
+  --color-primary-dark: #9ca3af; /* gray-400 */
+  
+  /* Secondary Colors - Dark Mode */
+  --color-secondary: #9ca3af; /* gray-400 */
+  --color-secondary-light: #d1d5db; /* gray-300 */
+  --color-secondary-lighter: #e5e7eb; /* gray-200 */
+  
+  /* Accent Colors - Dark Mode */
+  --color-accent: #6b7280; /* gray-500 */
+  
+  /* Text Colors - Dark Mode */
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-light: #6b7280;
+  
+  /* Border Colors - Dark Mode */
+  --border-light: #374151;
+  --border-medium: #4b5563;
+  --border-dark: #6b7280;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bodoni);
+  --font-playfair: var(--font-playfair);
+}
+
+/* Font utility classes */
+.font-display {
+  font-family: var(--font-bodoni);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Utility Classes for Colors */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.text-gradient-primary {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
