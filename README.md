@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Erfan Aalam - Portfolio Website
 
-## Getting Started
+A modern, interactive portfolio website showcasing my work as a Fullstack Developer & App Developer. Built with Next.js, React, and TypeScript, featuring smooth animations, custom cursor effects, and a beautiful UI.
 
-First, run the development server:
+🌐 **Live Website:** [https://erfanaalam.in](https://erfanaalam.in)
 
+## 👨‍💻 About Me
+
+I'm **Erfan Aalam**, a Fullstack Developer specializing in web and mobile app development. I help startups and businesses turn ideas into fast, scalable, real-world products.
+
+- 🏢 Currently working as Senior Software Developer
+- 💻 Full-stack expertise with modern technologies
+- 📱 Mobile app development (Android & iOS)
+- 🚀 Building production-grade applications
+
+## ✨ Features
+
+- 🎨 **Modern UI/UX** - Beautiful, responsive design with smooth animations
+- 🌓 **Dark/Light Mode** - Theme switching with smooth splash animation
+- 🖱️ **Custom Cursor** - Interactive cursor follower (desktop only)
+- 📱 **Fully Responsive** - Optimized for all screen sizes
+- ⚡ **Performance Optimized** - Fast loading and smooth interactions
+- 🎭 **3D Effects** - Interactive hover effects and animations
+- 🎯 **SEO Optimized** - Structured data and meta tags
+- 🎨 **Custom Scrollbar** - Modern, sleek scrollbar design
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14+ (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** React Icons (Feather Icons)
+- **Fonts:** Inter, Bodoni Moda, Playfair Display
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ErfanAalam/portfolio.git
+cd portfolio
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── src/
+│   ├── app/              # Next.js app router
+│   │   ├── layout.tsx   # Root layout
+│   │   ├── page.tsx     # Home page
+│   │   └── globals.css  # Global styles & custom scrollbar
+│   └── components/       # React components
+│       ├── Header.tsx   # Navigation header
+│       ├── Hero.tsx     # Hero section
+│       ├── About.tsx    # About section
+│       ├── Skills.tsx   # Skills section
+│       ├── Projects.tsx # Projects showcase
+│       ├── Contact.tsx  # Contact section
+│       ├── Footer.tsx   # Footer
+│       ├── CursorFollower.tsx  # Custom cursor
+│       ├── ThemeProvider.tsx    # Theme management
+│       └── ThemeTransition.tsx # Theme transition animation
+```
 
-## Learn More
+## 🎨 Key Components
 
-To learn more about Next.js, take a look at the following resources:
+- **Header** - Fixed navigation with mobile menu and theme toggle
+- **Hero** - Eye-catching hero section with animations
+- **About** - Interactive about section with 3D cards and particles
+- **Projects** - Modern project showcase with hover effects
+- **Skills** - Skills display with animations
+- **Contact** - Contact form section
+- **CursorFollower** - Custom cursor that follows mouse (desktop only)
+- **ThemeTransition** - Smooth theme switching animation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy is using [Vercel](https://vercel.com):
 
-## Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ErfanAalam/portfolio)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or deploy to any platform that supports Next.js:
+- Vercel (Recommended)
+- Netlify
+- AWS Amplify
+- Railway
+- Render
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📧 Contact & Links
+
+- **Website:** [https://erfanaalam.in](https://erfanaalam.in)
+- **GitHub:** [@ErfanAalam](https://github.com/ErfanAalam)
+- **LinkedIn:** [erfanaalam](https://www.linkedin.com/in/erfanaalam/)
+- **Twitter/X:** [@ErfanAalam03](https://x.com/ErfanAalam03)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ by [Erfan Aalam](https://erfanaalam.in)
