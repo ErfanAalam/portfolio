@@ -120,7 +120,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none text-[var(--text-secondary)]"
                 />
               </div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none text-[var(--text-secondary)]"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-medium)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none resize-none text-[var(--text-secondary)]"
                 />
               </div>
 

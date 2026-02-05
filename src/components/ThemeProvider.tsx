@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
+import { ThemeTransition } from './ThemeTransition';
 
 type Theme = 'light' | 'dark';
 
@@ -26,54 +27,77 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return getInitialTheme();
   });
 
-  // Apply theme to DOM whenever it changes
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [pendingTheme, setPendingTheme] = useState<Theme | null>(null);
+
+  // Apply theme to DOM on initial load only
   useEffect(() => {
     const root = document.documentElement;
     
-    // Apply the theme class
+    // Apply the theme class on initial load
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
     
-    // Save to localStorage
+    // Save to localStorage on initial load
     try {
       localStorage.setItem('theme', theme);
     } catch {
       // localStorage might not be available
     }
-  }, [theme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run on mount
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     
-    // Immediately update DOM for instant feedback - do this FIRST
-    const root = document.documentElement;
-    if (newTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+    // Start transition animation
+    setPendingTheme(newTheme);
+    setIsTransitioning(true);
     
-    // Then update state
-    setTheme(newTheme);
-    
-    // Save to localStorage immediately
-    try {
-      localStorage.setItem('theme', newTheme);
-    } catch {
-      // localStorage might not be available
-    }
-    
-    // Debug log
-    console.log('Theme toggled to:', newTheme);
-    console.log('HTML classes:', root.classList.toString());
+    // Apply theme change when splash is fully covering the screen
+    // This prevents blinking and ensures smooth transition
+    setTimeout(() => {
+      const root = document.documentElement;
+      if (newTheme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      setTheme(newTheme);
+      
+      // Save to localStorage
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch {
+        // localStorage might not be available
+      }
+      
+      // Start exit animation shortly after theme change
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 200); // Start exit 200ms after theme change
+    }, 500); // Change theme at ~62% of 0.8s animation (when splash fully covers screen)
+  };
+
+  const handleTransitionComplete = () => {
+    // Immediately remove transition state
+    setIsTransitioning(false);
+    setPendingTheme(null);
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
+      {pendingTheme && (
+        <ThemeTransition
+          isTransitioning={isTransitioning}
+          newTheme={pendingTheme}
+          onComplete={handleTransitionComplete}
+        />
+      )}
     </ThemeContext.Provider>
   );
 }

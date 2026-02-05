@@ -3,6 +3,7 @@ import { Inter, Bodoni_Moda, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import CursorFollower from "@/components/CursorFollower";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -196,6 +197,7 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
+          <CursorFollower />
           {children}
         </ThemeProvider>
       </body>

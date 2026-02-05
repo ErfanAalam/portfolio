@@ -158,7 +158,7 @@ export default function Hero() {
             <pre className="text-sm text-left text-[var(--text-secondary)] font-mono">
               {`const developer = {
   name: "Erfan Aalam",
-  stack: ["Next.js", "Node", "Postgres"],
+  stack: ["Next.js", "Node", "Flutter"],
   focus: "Clean UI & Scalable Systems",
   coffee: true,
 };
